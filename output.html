@@ -1,0 +1,60 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+      </script>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          padding: 20px;
+          font-size: 18px;
+          line-height: 1.5;
+        }
+      </style>
+    </head>
+    <body>
+      Question: Prove that for all real numbers \( x \), the following identity holds:  
+\[ \sin^2(x) \cos^2(x) = \frac{1 - \cos(4x)}{8} \] 
+
+
+      Answer:We start with the left-hand side (LHS) of the identity and manipulate it to match the right-hand side (RHS):
+
+\[
+\sin^2(x) \cos^2(x) = \left(\sin(x) \cos(x)\right)^2
+\]
+
+Using the double-angle identity for sine, \( \sin(2x) = 2\sin(x)\cos(x) \), we can rewrite \( \sin(x)\cos(x) \) as:
+
+\[
+\sin(x)\cos(x) = \frac{1}{2}\sin(2x)
+\]
+
+Substituting back into the equation:
+
+\[
+\left(\sin(x)\cos(x)\right)^2 = \left(\frac{1}{2}\sin(2x)\right)^2 = \frac{1}{4}\sin^2(2x)
+\]
+
+Next, we use the double-angle identity for cosine, \( \cos(4x) = 1 - 2\sin^2(2x) \), to express \( \sin^2(2x) \) in terms of \( \cos(4x) \):
+
+\[
+\sin^2(2x) = \frac{1 - \cos(4x)}{2}
+\]
+
+Substituting this back into the equation:
+
+\[
+\frac{1}{4}\sin^2(2x) = \frac{1}{4} \cdot \frac{1 - \cos(4x)}{2} = \frac{1 - \cos(4x)}{8}
+\]
+
+Thus, the identity is proven:
+
+\[
+\sin^2(x) \cos^2(x) = \frac{1 - \cos(4x)}{8}
+\]
+    </body>
+    </html>
+    
