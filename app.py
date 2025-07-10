@@ -27,7 +27,7 @@ def get_user_next_action():
     return action
 
 def generate_question(topic, difficulty):
-    prompt = f"Generate a {difficulty} level math question on {topic}. Only return the question, e.g., 'What is 7 + 5?'. Do not include anything other than the answer in PURE Latex. Do not include prefixes or suffixes, e.g., '**Question**:...'"
+    prompt = f"Generate a {difficulty} level math question on {topic}. Only return the question, e.g., 'What is 7 + 5?'. Do not include anything other than Latex. Do not include prefixes or suffixes, e.g., '**Question**:...'"
     response = client.chat.completions.create(
         model="deepseek-ai/DeepSeek-V3-0324",
         messages=[{"role": "user", "content": prompt}],
@@ -39,7 +39,7 @@ def generate_question(topic, difficulty):
     return question
 
 def solve_question(question):
-    prompt = f"Solve this math problem and give only the final answer as a number or expression: {question}. Do not include anything other than the answer in PURE Latex. Do not include prefixes or suffixes, e.g., '**Answer**:...'. Explain everything in steps, using Latex to properly space the different steps."
+    prompt = f"Solve this math problem and give only the final answer as a number or expression: {question}. Do not include anything other than Latex. Do not include prefixes or suffixes, e.g., '**Answer**:...'. Explain everything in steps, using Latex to properly space the different steps."
     response = client.chat.completions.create(
         model="deepseek-ai/DeepSeek-V3-0324",
         messages=[{"role": "user", "content": prompt}],
@@ -52,7 +52,7 @@ import markdown
 def show_latex(question, answer, filename="output.html"):
     
     question_str = "Question: " + question
-    answer_str ="Answer:" + answer
+    answer_str ="Answer: " + answer
 
     # Wrap in HTML with MathJax for LaTeX rendering
     html_template = f"""
@@ -73,8 +73,10 @@ def show_latex(question, answer, filename="output.html"):
       </style>
     </head>
     <body>
-      {question_str} \n\n
-      {answer_str}
+      <p>{question_str}</p>
+      </br>
+      </br>
+      <p>{answer_str}</p>
     </body>
     </html>
     """
